@@ -19,8 +19,8 @@ export const useGradeStore = defineStore('grade', () => {
     } else if (data) {
       grades.value = data.map((g: any) => ({
         id: g.id,
-        studentId: g.student_id,
-        studentName: g.student_name,
+        studentId: g.studentId,
+        studentName: g.studentName,
         subject: g.subject,
         score: g.score,
         date: g.date
@@ -34,8 +34,8 @@ export const useGradeStore = defineStore('grade', () => {
     const { data, error: fetchError } = await fetchWithAuth('/grades', {
       method: 'POST',
       body: JSON.stringify({
-        student_id: grade.studentId,
-        student_name: grade.studentName,
+        studentId: grade.studentId,
+        studentName: grade.studentName,
         subject: grade.subject,
         score: grade.score,
         date: grade.date
@@ -51,8 +51,8 @@ export const useGradeStore = defineStore('grade', () => {
     if (data) {
       grades.value.push({
         id: data.id,
-        studentId: data.student_id,
-        studentName: data.student_name,
+        studentId: data.studentId,
+        studentName: data.studentName,
         subject: data.subject,
         score: data.score,
         date: data.date
@@ -65,8 +65,8 @@ export const useGradeStore = defineStore('grade', () => {
   const updateGrade = async (id: string, updates: Partial<Grade>) => {
     loading.value = true
     const backendUpdates: any = {}
-    if (updates.studentId) backendUpdates.student_id = updates.studentId
-    if (updates.studentName) backendUpdates.student_name = updates.studentName
+    if (updates.studentId) backendUpdates.studentId = updates.studentId
+    if (updates.studentName) backendUpdates.studentName = updates.studentName
     if (updates.subject) backendUpdates.subject = updates.subject
     if (updates.score !== undefined) backendUpdates.score = updates.score
     if (updates.date) backendUpdates.date = updates.date
@@ -87,8 +87,8 @@ export const useGradeStore = defineStore('grade', () => {
       if (index !== -1) {
         grades.value[index] = {
           id: data.id,
-          studentId: data.student_id,
-          studentName: data.student_name,
+          studentId: data.studentId,
+          studentName: data.studentName,
           subject: data.subject,
           score: data.score,
           date: data.date
