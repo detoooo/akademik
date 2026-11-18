@@ -54,7 +54,7 @@
         <!-- Demo Accounts -->
         <div class="grid grid-cols-2 gap-3">
           <button 
-            @click="fillDemo('admin@smk.id', 'admin123')"
+            @click="fillDemo('admin@example.com', 'Password123')"
             class="px-3 py-2.5 rounded-lg border border-slate-100 hover:border-indigo-100 hover:bg-indigo-50/50 transition-all text-left group"
           >
             <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider group-hover:text-indigo-400">Admin</p>
